@@ -1,0 +1,91 @@
+html {
+  background-image: url(/static/img/mountain.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+ .container {
+   border-radius: 10px;
+   outline-style: solid;
+   outline: solid thick;
+   outline-color: #002855;
+   outline-width: 8px;
+   background-color: #ced4db;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 60px;
+   padding-bottom: 60px;
+ }
+
+ .Banner {
+   font-family: Helvetica Neue;
+   font-size: 50px;
+   color: #002855;
+   width: 100%;
+   margin: 0;
+   padding-bottom: 0;
+   text-align: center;
+ }
+
+ .buttonList {
+   display: flex;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   -webkit-box-align: center;
+   margin: auto;
+   width: 90%;
+   align-items: center;
+   justify-content: center;
+   padding-bottom:50px;
+   color: white;
+ }
+
+ .buttonList a {
+   margin-right: 5%;
+   margin-left: 5%;
+   padding-left: 3%;
+   padding-right: 3%;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   background-color: #002855;
+   border-radius: 10px;
+   transition: 0.5s;
+ }
+ .buttonList a:hover{
+   background-color: #EAAA00;
+   color:#002855;
+ }
+
+ .buttonList2 {
+   display: flex;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   -ms-flex-align: center;
+   -webkit-align-items: center;
+   -webkit-box-align: center;
+   margin: auto;
+   width: 90%;
+   align-items: center;
+   justify-content: center;
+   padding-bottom:50px;
+   color: white;
+ }
+
+ .buttonList2 a {
+   margin-right: 1%;
+   margin-left: 1%;
+   padding-left: 3%;
+   padding-right: 3%;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   background-color: #002855;
+   border-radius: 10px;
+   transition: 0.5s;
+ }
+ .buttonList2 a:hover{
+   background-color: #EAAA00;
+   color:#002855;
+ }

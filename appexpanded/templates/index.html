@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    {% if request.MOBILE %}
+    <link rel="stylesheet" href={{ url_for('static', filename='css/mobile.css') }}>
+    {% else %}
+    <link rel="stylesheet" href={{ url_for('static', filename='css/index.css') }}>
+    {% endif %}
+    <title>WVRX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src={{ url_for('static', filename='js/index.js') }}></script>
+
+  </head>
+  <body>
+
+
+    <div class="Banner">
+      <h1>WV RX RADIO</h1>
+    </div>
+    <div class="container">
+    <div class="buttonList">
+    <a id="1027">102.7 WVSR-FM</a>
+    <a id="999">99.9 WVAF</a>
+    <a id="961">96.1 WKWS</a>
+    <a id="1073">107.3 WKAZ-FM</a>
+    {% if request.MOBILE %}
+    {% endif %}
+  </div>
+  {% if request.MOBILE %}
+  <div style="margin-top: 25px;"class="buttonList">
+  <a id="play">Play</a>
+  <a id="pause">Pause</a>
+</div>
+  {% else %}
+  <div class="buttonList2">
+  <a id="play">Play</a>
+  <a id="pause">Pause</a>
+</div>
+{% endif %}
+</div>
+  </body>
+</html>

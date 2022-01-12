@@ -1,0 +1,55 @@
+html {
+  background-image: url(/static/img/mountain.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.container {
+  border-radius: 10px;
+  outline-style: solid;
+  outline: solid thick;
+  outline-color: #002855;
+  outline-width: 8px;
+  background-color: #ced4db;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+ .Banner {
+   font-family: Helvetica Neue;
+   font-size: 35px;
+   color: #002855;
+   width: 100%;
+   margin: 0;
+   padding-bottom: 0;
+   text-align: center;
+ }
+
+ .buttonList {
+   width: 60%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 5px;
+   padding-bottom: 5px;
+ }
+
+ .buttonList a{
+   text-align: center;
+   font-size: 25px;
+   border-radius: 10px;
+   background-color: #002855;
+   color: black; /* Black text color */
+   display: block; /* Make the links appear below each other */
+   padding: 12px; /* Add some padding */
+   margin-bottom: 1%;
+   text-decoration: none;
+   color: white;/* Remove underline from links */
+ }
+
+ .buttonList.r a:hover {
+   background-color: #EAAA00;
+   color: black;/* Dark grey background on mouse-over */
+ }
