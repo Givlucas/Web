@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<title>OTM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <style>
+   @font-face {
+     font-family: roboto;
+     src: url("{{ url_for('static', filename='font/Roboto/Roboto-Thin.ttf') }}");
+   }
+ </style>
+
+  <link rel="stylesheet" href={{ url_for('static', filename='css/index.css')}}>
+
+  <link rel="stylesheet" href={{ url_for('static', filename='css/nomobile.css')}}>
+
+
+</head>
+<body>
+
+
+  <div class="banner">
+    <div class="title">
+      <h1>Welcome!</h1>
+    </div>
+  </div>
+
+  <div class="info">
+
+    <div class="textbox">
+      <p>Hi! My name is Lucas Givens. Aspiring programer I'm looking for experience anywhere and everywhere. Right now this
+        site is more of a contact card, but eventually its gunna be a main page for my projects so stay tuned!
+        Below are my socials as well as my contact information. Feel free to reach out to me at any time with questions!
+      </p>
+    </div>
+    <div class="socials">
+      <a href="https://www.instagram.com/lucas_givens/"><img src="{{url_for('static', filename='img/insta.svg')}}" width="50" height="50" alt=""></a>
+      <a href="https://www.linkedin.com/in/lucas-givens-2a2198214"><img src="{{url_for('static', filename='img/linked.svg')}}" width="50" height="50" alt=""></a>
+      <a href="{{ url_for('snapCode') }}"><img src="{{url_for('static', filename='img/snap.svg')}}" width="50" height="50" alt=""></a>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="contact">
+      <br>
+      <li>Email: givlucas@gmail.com</li>
+      <br>
+      <li>Phone: (304)-546-2718</li>
+
+    </div>
+    <div class="skills">
+      <h1>Skills</h1>
+      <a href="#">C++</a>
+      <a href="#">C</a>
+      <a href="#">Assembly</a>
+      <a href="#">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JS</a>
+      <a href="#">Networking</a>
+      <a href="#">Google Cloud</a>
+      <a href="#">Cyper Security</a>
+    </div>
+  </div>
+
+</body>
+</html>

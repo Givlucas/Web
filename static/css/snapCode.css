@@ -1,0 +1,34 @@
+html{
+  background-color: #45454d;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+@media screen and (max-aspect-ratio: 9 / 16){
+  body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .code{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .code img{
+    width: 70%;
+    height: 70%;
+  }
+}
