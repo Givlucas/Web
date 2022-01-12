@@ -1,5 +1,0 @@
-rtl_fm -g 50 -f 99.9M -W -D -s 180k -r 180k |
-sox -t raw -r 180k -es -b 16 -c1 -V1 - -t ogg - |
-cvlc - --sout "#standard{access=http,mux=ogg,dst=192.168.1.75:8080/audio.ogg}"
-
-https://medium.com/@luigifcruz/listening-live-fm-radio-over-the-network-with-rtl-sdr-2349c5abe878
