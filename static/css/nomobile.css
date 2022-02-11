@@ -1,3 +1,84 @@
+/*NAV BEGIN*/
+
+.nav {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  margin-top: 7.5px;
+  margin-left: 1%;
+  border-radius: 20px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.nav-info {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+}
+
+.hamburger {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.ham {
+  border-radius: 50px;
+  background-color: grey;
+  width: 70%;
+  height: 10%;
+  transition: all .5s ease-in-out;
+}
+
+.ham::before,
+.ham::after {
+  content: '';
+  position: absolute;
+  border-radius: 50px;
+  background-color: grey;
+  width: 70%;
+  height: 10%;
+  transition: all .5s ease-in-out;
+}
+
+.ham::before {
+  transform: translateY(-200%);
+}
+
+.ham::after {
+  transform: translateY(200%);
+}
+
+.hamburger.open .ham{
+  background: transparent;
+}
+
+.hamburger.open .ham::before{
+  transform: rotate(45deg) ;
+}
+
+.hamburger.open .ham::after{
+  transform: rotate(-45deg);
+}
+
+.grow {
+  width: 98%;
+}
+
+.nav.grow .nav-info{
+  display: flex;
+  width: auto;
+  height: auto;
+}
+
+/*NAV END*/
 
 .title{
   margin-top: auto;
@@ -14,7 +95,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 30%;
+  height: 25%;
   display: grid;
   align-content: center;
 }
@@ -92,13 +173,17 @@
   padding: 4px;
   margin-top: 6px;
   background-color: white;
+  transition: 0.3s;
 }
 
 .skills a:hover{
   background-color: black;
   color: white;
-  transition: 1s;
+  transition: 0.3s;
+  font-size: 2em;
 }
+
+
 
 
 @media screen and (max-aspect-ratio: 4 / 3){
