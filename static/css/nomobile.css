@@ -1,7 +1,7 @@
 /*NAV BEGIN*/
 
 .nav {
-  display: flex;
+  display: -webkit-box;
   height: 60px;
   width: 60px;
   margin-top: 7.5px;
@@ -10,15 +10,32 @@
   background-color: white;
   transition: 0.3s ease-in-out;
   overflow: hidden;
+  grid-gap: 10px;
 }
 
 .nav-info {
   width: 0px;
   height: 0px;
-  overflow: hidden;
+  grid-gap: 10%;
+  display: none;
+  align-items: center;
+}
+
+.nav-info a{
+  color: black;
+  font-size: 1.3em;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.nav-info a:hover{
+  font-size: 1.4em;
 }
 
 .hamburger {
+  top: 0;
+  left: 0;
   position: relative;
   width: 60px;
   height: 60px;
@@ -218,7 +235,7 @@
 
 @media screen and (max-aspect-ratio: 9 / 16){
   .banner{
-    height: 25%;
+    height: 15%;
     transition: 1s;
   }
   .title{
@@ -241,6 +258,9 @@
     align-items: center;
     flex-direction: column;
     transition: 1s;
+  }
+  .skills {
+      width: 80%;
   }
   .skills h1{
     text-align: center;
