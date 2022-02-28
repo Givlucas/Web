@@ -1,20 +1,15 @@
 from flask import Flask
-from flask import render_template
 
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
 
-@app.route("/")
-def index():
-    return render_template('index.html')
+    # blueprint for auth routes in our app
+    from auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
 
-@app.route("/snapCode")
-def snapCode():
-    return render_template('snapCode.html')
+    # blueprint for non-auth parts of app
+    from routes import routes as routes_blueprint
+    app.register_blueprint(routes_blueprint)
 
-@app.route("/showroom")
-def showroom():
-    return render_template('showroom/showroom.html')
-
-if __name__ == "__main__":
-    app.run(debug=False)
+    return app
