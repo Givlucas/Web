@@ -1,15 +1,13 @@
 from flask import Flask
 
 
-def create_app():
-    app = Flask(__name__)
 
-    # blueprint for auth routes in our app
-    from auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
+app = Flask(__name__)
 
-    # blueprint for non-auth parts of app
-    from routes import routes as routes_blueprint
-    app.register_blueprint(routes_blueprint)
+# blueprint for auth routes in our app
+from auth import auth as auth_blueprint
+app.register_blueprint(auth_blueprint)
 
-    return app
+# blueprint for non-auth parts of app
+from routes import routes as routes_blueprint
+app.register_blueprint(routes_blueprint)
