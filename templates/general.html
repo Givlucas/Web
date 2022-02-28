@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>OTM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <style>
+   @font-face {
+     font-family: roboto;
+     src: url("{{ url_for('static', filename='font/Roboto/Roboto-Thin.ttf') }}");
+   }
+ </style>
+
+  <link rel="stylesheet" href={{ url_for('static', filename='css/index.css')}}>
+
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="hamburger" id="hamburger">
+      <div class="ham">
+
+      </div>
+    </div>
+
+    <div class="nav-info">
+      {% block nav %}
+      {% endblock nav %}
+      <a href="http://showroom.otmlabs.xyz/">Sample Site</a>
+
+    </div>
+
+
+  </div>
+  <script src={{ url_for('static', filename='js/nav.js')}}> </script>
+
+  {% block content %}
+  {% endblock content %}
+
+</body>
+</html>
