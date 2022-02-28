@@ -1,0 +1,25 @@
+{% extends "general.html" %}
+{% block nav %}
+  <a href="http://otmlabs.xyz/">Home</a>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/form.css')}}>
+
+<div class="container">
+  <div class="box">
+    <h2>Sign up</h2>
+    <form action="/signup" method="post">
+      <div class="field">
+        <input class="" type="email" name="email" placeholder="Email" autofocus="">
+      </div>
+      <div class="field">
+        <input class="" type="password" name="password" placeholder="Password">
+      </div>
+          <button class="">Sign Up</button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock content %}
