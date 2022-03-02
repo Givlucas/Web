@@ -12,9 +12,12 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+}
+
+.rainbow-body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {
@@ -52,6 +55,7 @@ body {
   grid-gap: 10%;
   display: none;
   align-items: center;
+
 }
 
 .nav-info a{
@@ -131,7 +135,14 @@ body {
   height: auto;
 }
 
-
+.color-shifter {
+  background-color: grey;
+  border-radius: 100px;
+  min-width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 101;
+}
 
 /*NAV END*/
 
@@ -146,5 +157,50 @@ body {
   color: green;
   font-weight: bold;
 }
+  /*White Black */
+.wb-body{
+  color: black;
+  background-color: white;
+}
+
+.wb-asset {
+  color: black;
+  background-color: white;
+  box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+}
+
+.wb-asset-nb h1{
+  color: black !important;
+}
+
+.wb-asset li{
+  color: black;
+  background-color: white;
+}
+/*White Black End*/
+
+/*Dark mode*/
+
+.d-body {
+  color: white !important;
+  background-color: #3b3b3b !important;
+}
+
+.d-asset {
+  background-color: #717582 !important;
+  color: white !important;
+}
+.d-asset-nb{
+  color: white
+}
+.d-asset-b li{
+  color: white !important;
+}
+
+.d-asset-ele-b{
+  background-color: white;
+}
+
+/*Dark mode end*/
 
 /*END TOOLS*?

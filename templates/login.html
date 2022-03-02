@@ -7,7 +7,7 @@
 <link rel="stylesheet" href={{ url_for('static', filename='css/form.css')}}>
 
 <div class="container">
-  <div class="box">
+  <div class="box asset">
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}

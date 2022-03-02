@@ -3,7 +3,7 @@
 <title>OTM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXX0FG7DMK"></script>
 <script>
@@ -27,18 +27,20 @@
   {% endblock css %}
 </head>
 
-<body>
+<body class="rainbow-body b">
 
-  <div class="nav">
-    <div class="hamburger" id="hamburger">
-      <div class="ham">
+  <div class="nav asset">
+    <div class="hamburger " id="hamburger">
+      <div class="ham asset-ele">
 
       </div>
     </div>
 
     <div class="nav-info">
+      <div class="color-shifter asset-ele"></div>
       {% block nav %}
       {% endblock nav %}
+
       <a href="http://showroom.otmlabs.xyz/">Sample Site</a>
       {% if not current_user.is_authenticated %}
       <a href="/signup">Sign Up</a>
@@ -53,6 +55,7 @@
 
   </div>
   <script src={{ url_for('static', filename='js/nav.js')}}> </script>
+  <script src={{ url_for('static', filename='js/color.js')}}> </script>
 
   {% block content %}
   {% endblock content %}

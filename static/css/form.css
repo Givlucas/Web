@@ -15,7 +15,7 @@
   z-index: -2;
   background-color: white;
   width: 30vw;
-  height: 30vw;
+  min-height: 30vw;
   border-radius: 35px;
   box-shadow: 0 3px 47px rgba(0,0,0,0.15);
   display: grid;
@@ -42,10 +42,15 @@
 .success {
   text-align: center;
 }
+
+button {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-aspect-ratio: 4 / 3){
   .box {
   width: 35vh;
-  height: 40vh;
+  min-height: 44vh;
   }
 }
 
