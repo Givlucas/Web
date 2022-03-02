@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import Users as User
 from flask_login import login_user, login_required, logout_user
 from fapp import db
+import re
 
 auth = Blueprint('auth', __name__)
 
@@ -37,16 +38,41 @@ def signup():
 def signup_post():
     email = request.form.get('email')
     password = request.form.get('password')
+    confp = request.form.get('conf_password')
+    fname = request.form.get('fname')
+    lname = request.form.get('lname')
+    org = request.form.get('organization')
+
+    if  email == "" or password == "" or fname == "" or lname == "" or org == "":
+        flash('One or more fields not completed', 'warning')
+        return redirect(url_for('auth.signup'))
+
+    if confp != password:
+        flash('passwords do not match', 'warning')
+        return redirect(url_for('auth.signup'))
 
     user = User.query.filter_by(email=email).first()
 
     if user:
-        flash('Email address already exists')
+        flash('Email address already exists. Go to login page', 'warning')
         return redirect(url_for('auth.signup'))
 
-    new_user = User(email=email, password=generate_password_hash(password, method='sha256'))
+    if len(password) < 8:
+        flash('Password too short', 'warning')
+        return redirect(url_for('auth.signup'))
+
+    if bool(re.search("[!@#$%^&]+", password)) != True:
+        flash('Please include 1 or more special characters. ! @ # $ % ^ & ', 'warning')
+        return redirect(url_for('auth.signup'))
+
+    if bool(re.search("\d+", password)) != True:
+        flash('Please include 1 or more digits.', 'warning')
+        return redirect(url_for('auth.signup'))
+
+    new_user = User(email=email, password=generate_password_hash(password, method='sha256'), fname=fname, lname=lname, organization=org)
     db.session.add(new_user)
     db.session.commit()
+    flash('Account creation success!', 'success')
     return redirect(url_for('auth.login'))
 
 @auth.route('/logout')
