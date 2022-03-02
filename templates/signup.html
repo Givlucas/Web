@@ -1,6 +1,6 @@
 {% extends "general.html" %}
 {% block nav %}
-  <a href="http://otmlabs.xyz/">Home</a>
+  <a href="/">Home</a>
 {% endblock %}
 
 {% block content %}
@@ -8,15 +8,22 @@
 
 <div class="container">
   <div class="box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="warning">
+        {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+      </div>
+    {% endif %}
+    {% endwith %}
     <h2>Sign up</h2>
     <form action="/signup" method="post">
-      <div class="field">
+      <center><div class="field">
         <input class="" type="email" name="email" placeholder="Email" autofocus="">
-      </div>
-      <div class="field">
+      </div></center>
+      <center><div class="field">
         <input class="" type="password" name="password" placeholder="Password">
-      </div>
-          <button class="">Sign Up</button>
+      </div></center>
+          <center><button class="">Sign Up</button></center>
     </form>
 
   </div>

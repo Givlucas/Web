@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask import render_template
-
+from flask_login import login_required, current_user
 routes = Blueprint('routes', __name__)
 
 @routes.route("/")
@@ -14,3 +14,8 @@ def snapCode():
 @routes.route("/showroom")
 def showroom():
     return render_template('general.html')
+
+@routes.route("/profile")
+@login_required
+def profile():
+    return render_template('tempwelcome.html', name=current_user.email)

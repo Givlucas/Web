@@ -1,0 +1,32 @@
+{% extends "general.html" %}
+{% block nav %}
+  <a href="/">Home</a>
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/form.css')}}>
+
+<div class="container">
+  <div class="box">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="warning">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <h2>Login</h2>
+    <form action="/login" method="post">
+      <center><div class="field">
+        <input class="" type="email" name="email" placeholder="Email" autofocus="">
+      </div></center>
+      <center><div class="field">
+        <input class="" type="password" name="password" placeholder="Password">
+      </div></center>
+          <center><button class="">Login</button></center>
+    </form>
+
+  </div>
+</div>
+
+{% endblock content %}

@@ -57,10 +57,12 @@ body {
   text-decoration: none;
   text-align: center;
   transition: 0.3s;
+  z-index: 101;
 }
 
 .nav-info a:hover{
   font-size: 1.4em;
+
 }
 
 .hamburger {
@@ -126,4 +128,14 @@ body {
   height: auto;
 }
 
+
+
 /*NAV END*/
+
+
+/*TOOLS*/
+.warning {
+  color: red;
+  font-weight: bold;
+}
+/*END TOOLS*?
