@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import Users as User
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 from fapp import db
 import re
 
@@ -22,7 +22,7 @@ def login_post():
     user = User.query.filter_by(email=email).first()
 
     if not user or not check_password_hash(user.password, password):
-        flash('Please check your login details and try again.')
+        flash('Please check your login details and try again.', 'warning')
         return redirect(url_for('auth.login'))
 
     login_user(user, remember=remember)
@@ -79,4 +79,12 @@ def signup_post():
 @login_required
 def logout():
     logout_user()
+    return redirect(url_for('routes.index'))
+
+@auth.route('/removed')
+@login_required
+def rm_user_account():
+    usr_to_rm = User.query.filter_by(id=current_user.id).one()
+    db.session.delete(usr_to_rm)
+    db.session.commit()
     return redirect(url_for('routes.index'))

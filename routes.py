@@ -18,4 +18,4 @@ def showroom():
 @routes.route("/profile")
 @login_required
 def profile():
-    return render_template('profile.html', name=current_user.email)
+    return render_template('profile.html', name=current_user.fname, lname=current_user.lname, email=current_user.email, organization=current_user.organization)

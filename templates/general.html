@@ -29,15 +29,14 @@
 
 <body class="rainbow-body b">
 
-  <div class="nav asset">
+  <div class="nav ">
     <div class="hamburger " id="hamburger">
-      <div class="ham asset-ele">
+      <div class="ham ">
 
       </div>
     </div>
 
     <div class="nav-info">
-      <div class="color-shifter asset-ele"></div>
       {% block nav %}
       {% endblock nav %}
 
@@ -55,7 +54,7 @@
 
   </div>
   <script src={{ url_for('static', filename='js/nav.js')}}> </script>
-  <script src={{ url_for('static', filename='js/color.js')}}> </script>
+  
 
   {% block content %}
   {% endblock content %}

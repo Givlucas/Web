@@ -1,10 +1,69 @@
 {% extends "general.html" %}
+{% block css %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/profile.css')}}>
+{% endblock css %}
 {% block nav %}
   <a href="/">Home</a>
 {% endblock nav %}
 {% block content %}
 
-HELLO {{ name }}
+<div class="pop-up-bg">
+  <div class="pop-up warning">
+    <h2>Are you sure you want to delete your account?</h2>
+    <div class="">
+
+      <div class="selection">
+        <div class="warning-button">
+          Yes
+        </div>
+        <div class="button-medium no">
+          No
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="profile">
+    <div class="welcome">
+        <h1>Hello {{name}}!</h1>
+    </div>
+    <div class="display">
+      <div class="profile-info">
+
+        <h2>Accout Info</h2>
+
+        <div class="account-info">
+            Full name: {{name}} {{lname}}
+        </div>
+
+        <div class="account-info">
+            email: {{email}}
+        </div>
+
+        <div class="account-info">
+            organization: {{organization}}
+        </div>
+
+        <h2>Accout actions</h2>
+        <div class="warning-button activate">
+            Delete Account
+        </div>
+
+        <div class="button-big">
+          Change Account Info
+        </div>
+
+        <script src={{ url_for('static', filename='js/account_actions.js')}}> </script>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 
 {% endblock content %}
