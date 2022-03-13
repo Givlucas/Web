@@ -87,4 +87,4 @@ def rm_user_account():
     usr_to_rm = User.query.filter_by(id=current_user.id).one()
     db.session.delete(usr_to_rm)
     db.session.commit()
-    return redirect(url_for('routes.index'))
+    return redirect(url_for('routes.goodbye'))

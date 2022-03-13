@@ -1,8 +1,8 @@
 html, body {
   left: 0;
   top: 0;
-  width: 100%;
-  height:100%;
+  min-width: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   font-family: roboto;
@@ -16,7 +16,8 @@ body {
 
 .rainbow-body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
+  background-size: 1000% 1000%;
+  background-repeat: no-repeat;
   animation: gradient 15s ease infinite;
 }
 
@@ -35,18 +36,21 @@ body {
 /*NAV BEGIN*/
 
 .nav {
+  position: absolute;
   display: -webkit-box;
+  -webkit-box-orient: horizontal;
   height: 60px;
   width: 60px;
   margin-top: 7.5px;
   margin-left: 1%;
   border-radius: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.69);
   transition: 0.3s ease-in-out;
   overflow: hidden;
   grid-gap: 10px;
   box-shadow: 0 3px 47px rgba(0,0,0,0.25);
-
+  backdrop-filter: blur(10px);
+  z-index: 102;
 }
 
 .nav-info {
@@ -64,7 +68,7 @@ body {
   text-decoration: none;
   text-align: center;
   transition: 0.3s;
-  z-index: 101;
+  z-index: 102;
 }
 
 .nav-info a:hover{
@@ -73,6 +77,7 @@ body {
 }
 
 .hamburger {
+
   top: 0;
   left: 0;
   position: relative;
@@ -83,12 +88,12 @@ body {
   align-items: center;
   cursor: pointer;
   transition: all .5s ease-in-out;
-  z-index: 100;
+  z-index: 101;
 }
 
 .ham {
   border-radius: 50px;
-  background-color: grey;
+  background-color: #595959;
   width: 70%;
   height: 10%;
   transition: all .5s ease-in-out;
@@ -99,7 +104,7 @@ body {
   content: '';
   position: absolute;
   border-radius: 50px;
-  background-color: grey;
+  background-color: #595959;
   width: 70%;
   height: 10%;
   transition: all .5s ease-in-out;
@@ -135,8 +140,24 @@ body {
   height: auto;
 }
 
-/*NAV END*/
+@media screen and (max-aspect-ratio: 9 / 16){
+  .grow {
+    -webkit-box-orient: vertical;
+    height: 50vh;
+    width: 120px !important;
+  }
 
+  .nav.grow .nav-info{
+    display: flex;
+    flex-direction: column;
+    grid-column-gap: 4vh;
+    align-items: baseline;
+  }
+  .nav.grow .nav-info a{
+    margin-top: 5vh;
+  }
+}
+/*NAV END*/
 
 /*TOOLS*/
 .warning {
@@ -155,4 +176,28 @@ body {
   height: 75%;
 }
 
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 1%;
+}
+
+.bubble {
+  position: relative;
+
+  background-color: rgba(255, 255, 255, 0.69);
+  border-radius: 7.5px;
+  box-shadow: 0 3px 47px rgba(0,0,0,0.15);
+  color: black;
+
+  padding: 15px;
+  transition: 0.3s;
+
+}
+
+.spacer {
+  position: relative;
+  width: 100%;
+  height: 60px !important;
+}
 /*END TOOLS*/

@@ -10,49 +10,59 @@
       <h1>Welcome!</h1>
     </div>
   </div>
+  <div class="wrapper">
+    <div class="info ">
 
-  <div class="info ">
+      <div class="textbox ">
+        <p>Hi! My name is Lucas Givens. Aspiring programmer, I'm looking for experience anywhere and everywhere. Right now this
+          site is more of a contact card. If you check out the menu in the upper left corner you'll find a sample site I've been working on.
+          Eventually there where also be a link to my project page and their github repos so stay tuned!
+          Below are my socials as well as my contact information. Feel free to reach out to me at any time with questions!
+        </p>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/lucas_givens/"><img src="{{url_for('static', filename='img/insta.svg')}}" width="50" height="50" alt=""></a>
+        <a href="https://www.linkedin.com/in/lucas-givens-2a2198214"><img src="{{url_for('static', filename='img/linked.svg')}}" width="50" height="50" alt=""></a>
+        <a href="{{ url_for('routes.snapCode') }}"><img src="{{url_for('static', filename='img/snap.svg')}}" width="50" height="50" alt=""></a>
+      </div>
+  </div>
 
-    <div class="textbox ">
-      <p>Hi! My name is Lucas Givens. Aspiring programmer, I'm looking for experience anywhere and everywhere. Right now this
-        site is more of a contact card. If you check out the menu in the upper left corner you'll find a sample site I've been working on.
-        Eventually there where also be a link to my project page and their github repos so stay tuned!
-        Below are my socials as well as my contact information. Feel free to reach out to me at any time with questions!
-      </p>
-    </div>
-    <div class="socials">
-      <a href="https://www.instagram.com/lucas_givens/"><img src="{{url_for('static', filename='img/insta.svg')}}" width="50" height="50" alt=""></a>
-      <a href="https://www.linkedin.com/in/lucas-givens-2a2198214"><img src="{{url_for('static', filename='img/linked.svg')}}" width="50" height="50" alt=""></a>
-      <a href="{{ url_for('routes.snapCode') }}"><img src="{{url_for('static', filename='img/snap.svg')}}" width="50" height="50" alt=""></a>
+
+  </div>
+
+  <div class="wrapper-large">
+    <div class="footer">
+
+      <div class="contact">
+        <h1>Contacts</h1>
+        <div class="contacts">
+          <div class="bubble">givlucas@gmail.com</div>
+
+          <div class="bubble">lucas@otmlabs.xyz</div>
+
+          <div class="bubble">(304)-546-2718</div>
+        </div>
+
+      </div>
+      <div class="skills ">
+        <h1>Skills</h1>
+        <a class="" href="#">C++</a>
+        <a class="" href="#">C</a>
+        <a class="" href="#">x86 Assembly</a>
+        <a class="" href="#">HTML</a>
+        <a class="" href="#">CSS</a>
+        <a class="" href="#">JS</a>
+        <a class="" href="#">Networking</a>
+        <a class="" href="#">Google Cloud</a>
+        <a class="" href="#">Cyber Sec</a>
+        <a class="" href="#">GIT</a>
+        <a class="" href="#">Flask</a>
+        <a class="" href="#">UEFI</a>
+        <a class="" href="#">Python</a>
+        <a class="" href="#">SQL</a>
+        <a class="" href="#">Linux</a>
+      </div>
     </div>
   </div>
-  <div class="footer">
-    <div class="contact -nb">
-      <br>
-      <li>Email: givlucas@gmail.com</li>
-      <br>
-      <li>Email 2: lucas@otmlabs.xyz</li>
-      <br>
-      <li>Phone: (304)-546-2718</li>
 
-    </div>
-    <div class="skills -nb">
-      <h1>Skills</h1>
-      <a class="" href="#">C++</a>
-      <a class="" href="#">C</a>
-      <a class="" href="#">x86 Assembly</a>
-      <a class="" href="#">HTML</a>
-      <a class="" href="#">CSS</a>
-      <a class="" href="#">JS</a>
-      <a class="" href="#">Networking</a>
-      <a class="" href="#">Google Cloud</a>
-      <a class="" href="#">Cyber Sec</a>
-      <a class="" href="#">GIT</a>
-      <a class="" href="#">Flask</a>
-      <a class="" href="#">UEFI</a>
-      <a class="" href="#">Python</a>
-      <a class="" href="#">SQL</a>
-      <a class="" href="#">Linux</a>
-    </div>
-  </div>
 {% endblock content %}

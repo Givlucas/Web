@@ -15,6 +15,10 @@ def snapCode():
 def showroom():
     return render_template('general.html')
 
+@routes.route("/goodbye")
+def goodbye():
+    return render_template('goodbye.html')
+
 @routes.route("/profile")
 @login_required
 def profile():
