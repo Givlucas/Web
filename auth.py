@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import Users as User
 from flask_login import login_user, login_required, logout_user, current_user
 from fapp import db
+from datetime import datetime
 import re
 
 auth = Blueprint('auth', __name__)
@@ -71,7 +72,7 @@ def signup_post():
         flash('Please include 1 or more digits.', 'warning')
         return redirect(url_for('auth.signup'))
 
-    new_user = User(email=email, password=generate_password_hash(password, method='sha256'), fname=fname, lname=lname, organization=org, confirmed = conf, registered_on= reg_on)
+    new_user = User(email=email, password=generate_password_hash(password, method='sha256'), fname=fname, lname=lname, organization=org, confirmed=conf, registered_on=reg_on)
     db.session.add(new_user)
     db.session.commit()
     flash('Account creation success!', 'success')
