@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import Users as User
 from flask_login import login_user, login_required, logout_user, current_user
 from fapp import db
-from datetime import datetime
+import datetime
 import re
 
 auth = Blueprint('auth', __name__)
