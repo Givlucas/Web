@@ -42,6 +42,8 @@ def signup_post():
     fname = request.form.get('fname')
     lname = request.form.get('lname')
     org = request.form.get('organization')
+    conf = False
+    reg_on = datetime.datetime.now()
 
     if  email == "" or password == "" or fname == "" or lname == "" or org == "":
         flash('One or more fields not completed', 'warning')
@@ -69,7 +71,7 @@ def signup_post():
         flash('Please include 1 or more digits.', 'warning')
         return redirect(url_for('auth.signup'))
 
-    new_user = User(email=email, password=generate_password_hash(password, method='sha256'), fname=fname, lname=lname, organization=org)
+    new_user = User(email=email, password=generate_password_hash(password, method='sha256'), fname=fname, lname=lname, organization=org, confirmed = conf, registered_on= reg_on)
     db.session.add(new_user)
     db.session.commit()
     flash('Account creation success!', 'success')

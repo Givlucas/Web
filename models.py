@@ -8,3 +8,6 @@ class Users(UserMixin, db.Model):
     fname = db.Column(db.String(100))
     lname = db.Column(db.String(100))
     organization = db.Column(db.String(100))
+    registered_on = db.Column(db.DateTime, nullable=False)
+    confirmed_on = db.Column(db.DateTime)
+    confirmed = db.Column(db.Boolean, nullable = False, default = False)
