@@ -4,6 +4,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from models import Users as User
 from flask_login import login_user, login_required, logout_user, current_user
 from fapp import db
+from tok import gen_conf_tok, conf_tok
+from eml import send_mail
 import datetime
 import re
 
@@ -75,8 +77,35 @@ def signup_post():
     new_user = User(email=email, password=generate_password_hash(password, method='sha256'), fname=fname, lname=lname, organization=org, confirmed=conf, registered_on=reg_on)
     db.session.add(new_user)
     db.session.commit()
-    flash('Account creation success!', 'success')
-    return redirect(url_for('auth.login'))
+
+    tkn = gen_conf_tok(email)
+    confirm_url = url_for('auth.email_conf', token=tkn, _external=True)
+    html = render_template('active.html', confirm_url=confirm_url)
+    Subject = "Please confirm your email"
+    send_email(email, subject, html)
+
+    login_usr()
+
+    flash('A confirmation email as been sent via email', 'success')
+    return redirect(url_for('routes.profile'))
+
+@auth.route('/confirm/<tkn>')
+@login_required
+def confirm_email(tkn):
+    try:
+        email = conf_tok(tkn)
+    except:
+        flash('The confirmation link is invalid or expired.', 'warning')
+    user = User.query.filter_by(email=email).first()
+    if user.confirmed:
+        flash('Account already confirmed. Please login.', 'success')
+    else:
+        user.confirmed = True
+        user.confirmed_on = datetime.datetime.now()
+        db.session.add(user)
+        db.session.commit()
+        flash('Confirmation successful.', 'success')
+    return redirect(url_for('routes.profile'))
 
 @auth.route('/logout')
 @login_required
