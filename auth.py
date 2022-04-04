@@ -79,10 +79,10 @@ def signup_post():
     db.session.commit()
 
     tkn = gen_conf_tok(email)
-    confirm_url = url_for('auth.email_conf', token=tkn, _external=True)
+    confirm_url = url_for('auth.confirm_email', tkn=tkn, _external=True)
     html = render_template('active.html', confirm_url=confirm_url)
-    Subject = "Please confirm your email"
-    send_email(email, subject, html)
+    subject = "Please confirm your email"
+    send_mail(email, subject, html)
 
     login_usr()
 

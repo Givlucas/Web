@@ -1,7 +1,7 @@
 from flask_mail import Message
 from fapp import app, mail
 
-def send_email(to, subject, template):
+def send_mail(to, subject, template):
     msg = Message(
         subject,
         recipients=[to],
