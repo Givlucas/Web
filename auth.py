@@ -84,7 +84,7 @@ def signup_post():
     subject = "Please confirm your email"
     send_mail(email, subject, html)
 
-    login_usr()
+    login_user(new_user)
 
     flash('A confirmation email as been sent via email', 'success')
     return redirect(url_for('routes.profile'))

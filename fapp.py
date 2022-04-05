@@ -12,12 +12,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECURITY_PASSWORD_SALT'] = "ASD8&&s*$#6ksdf8*^&&SDF&^SD"
 
 #mail
-MAIL_SERVER = 'smtp.googlemail.com'
-MAIL_PORT = 465
-MAIL_USE_TLS = False
-MAIL_USE_SSL = True
-MAIL_USERNAME = 'tt6564110@gmail.com'
-MAIL_PASSWORD = '@390083816LLll'
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL']  = True
+app.config['MAIL_USERNAME'] = 'tt6564110@gmail.com'
+app.config['MAIL_PASSWORD'] = '@390083816LLll'
 app.config['MAIL_DEFAULT_SENDER'] = 'tt6564110@gmail.com'
 
 
