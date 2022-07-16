@@ -6,10 +6,10 @@ db = SQLAlchemy()
 mail = Mail()
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'adfg3653u65$^W#^W$TG$TV4vttV$TVrg%&&n8nV$5V#V#@%Vbvtyhyh'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://lucas:#390083816LLll@db.internal.io/webtest'
+app.config['SECRET_KEY'] = ''
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://lucas:@db.internal.io/webtest'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECURITY_PASSWORD_SALT'] = "ASD8&&s*$#6ksdf8*^&&SDF&^SD"
+app.config['SECURITY_PASSWORD_SALT'] = ""
 
 #mail
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
@@ -17,7 +17,7 @@ app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL']  = True
 app.config['MAIL_USERNAME'] = 'tt6564110@gmail.com'
-app.config['MAIL_PASSWORD'] = '@390083816LLll'
+app.config['MAIL_PASSWORD'] = ''
 app.config['MAIL_DEFAULT_SENDER'] = 'tt6564110@gmail.com'
 
 
